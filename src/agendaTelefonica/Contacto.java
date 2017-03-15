@@ -5,6 +5,8 @@ package agendaTelefonica;
  * @author Oscar de la Cuesta - www.palentino.es
  */
 public class Contacto {
+    /*aquí haremos unas modificaciones, concretamente en lugar de
+    tener un int tendremos un ArrayList<TipoTelefono>*/
     private String nombre;
     private int telefono;
  

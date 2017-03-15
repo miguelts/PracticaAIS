@@ -11,6 +11,7 @@ import java.util.logging.Logger;
  * @author Oscar de la Cuesta Campillo. www.palentino.es
  */
 public class Agenda {
+    // Aquí también haremos pequeñas modificaciónes
  
     Contacto[] lista_contactos = new Contacto[99];
     private int contador_contactos = 0; // Contador de objetos creados. Variable muy importante.

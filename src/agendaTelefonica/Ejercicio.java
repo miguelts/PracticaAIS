@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  * @author Oscar de la Cuesta - www.palentino.es
  */
 public class Ejercicio {
+    // Este va ser nuestra clase principal
     
     
     public static void main(String[] args) {
