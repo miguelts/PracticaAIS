@@ -1,10 +1,12 @@
 package agendaTelefonica;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Oscar de la Cuesta - www.palentino.es
  */
-public class Contacto {
+public class Contacto implements Serializable {
     /*aquí haremos unas modificaciones, concretamente en lugar de
     tener un int tendremos un ArrayList<TipoTelefono>*/
     private String nombre;
@@ -32,8 +34,6 @@ public class Contacto {
  
     public int getTelefono() {
         return telefono;
-    }
-    
-    
+    }   
     
 }
