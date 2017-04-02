@@ -81,6 +81,11 @@ public class Interfaz extends javax.swing.JFrame {
         setTitle("Agenda URJC");
         setIconImage(new ImageIcon(getClass().getResource("/agendaTelefonica/Agenda.png")).getImage());
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanelInicio.setBackground(new java.awt.Color(255, 255, 255));
         jPanelInicio.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -554,11 +559,17 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarActionPerformed
-        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Caja_Fuerte.png"));
+        int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea guardar la agenda?", "Guardar Agenda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if (JOptionPane.OK_OPTION == result)
+            JOptionPane.showMessageDialog(this, "¡Agenda guardada con éxito!", "Guardar Agenda", JOptionPane.INFORMATION_MESSAGE, icon);
     }//GEN-LAST:event_jMenuItemGuardarActionPerformed
 
     private void jMenuItemVaciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVaciarActionPerformed
-        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Reciclaje.png"));
+        int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea vaciar la agenda?", "Vaciar Agenda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if (JOptionPane.OK_OPTION == result)
+            JOptionPane.showMessageDialog(this, "¡Agenda vaciada con éxito!", "Vaciar Agenda", JOptionPane.INFORMATION_MESSAGE, icon);
     }//GEN-LAST:event_jMenuItemVaciarActionPerformed
 
     private void jMenuItemExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExportarActionPerformed
@@ -639,7 +650,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void jButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarActionPerformed
-        // TODO add your handling code here:
+        jTextFieldVariable.setText("");
     }//GEN-LAST:event_jButtonBorrarActionPerformed
 
     private void jButtonAnaidirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnaidirActionPerformed
@@ -694,6 +705,13 @@ public class Interfaz extends javax.swing.JFrame {
             jPanelMostrar.setVisible(true);
         }
     }//GEN-LAST:event_jButtonInfoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Salir.png"));
+        int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que no desea guardar antes de salir?", "Cerrar Agenda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if (JOptionPane.OK_OPTION == result)
+            System.exit(0);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
