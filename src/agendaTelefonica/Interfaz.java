@@ -875,23 +875,31 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonHome2ActionPerformed
 
     private void jButtonAceptar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptar1ActionPerformed
-        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/ModificarAñadir_Usuario.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Modificar_Usuario.png"));
         JOptionPane.showMessageDialog(this, "¡Nombre ya registrado!", "Modificar Contacto", JOptionPane.WARNING_MESSAGE, icon);
         JOptionPane.showMessageDialog(this, "¡Contacto modificado con éxito!", "Modificar Contacto", JOptionPane.INFORMATION_MESSAGE, icon);
     }//GEN-LAST:event_jButtonAceptar1ActionPerformed
 
     private void jButtonCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelar1ActionPerformed
-        jPanelEditar.setVisible(false);
-        jPanelMostrar.setVisible(true);
-        jTextFieldNombre2.setText("");
-        jTextAreaTelefonos2.setText("");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Modificar_Usuario.png"));
+        int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que quiere salir sin guardar los cambios?", "Modificar Contacto", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if (JOptionPane.OK_OPTION == result) {        
+            jPanelEditar.setVisible(false);
+            jPanelMostrar.setVisible(true);
+            jTextFieldNombre2.setText("");
+            jTextAreaTelefonos2.setText("");
+        }
     }//GEN-LAST:event_jButtonCancelar1ActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        jPanelAnaidir.setVisible(false);
-        jPanelAgenda.setVisible(true);
-        jTextFieldNombre1.setText("");
-        jTextAreaTelefonos1.setText("");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Añadir_Usuario.png"));
+        int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que quiere salir sin guardar el contacto?", "Nuevo Contacto", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if (JOptionPane.OK_OPTION == result) { 
+            jPanelAnaidir.setVisible(false);
+            jPanelAgenda.setVisible(true);
+            jTextFieldNombre1.setText("");
+            jTextAreaTelefonos1.setText("");
+        }
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
