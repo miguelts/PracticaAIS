@@ -24,6 +24,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanelAgenda.setVisible(false);
         jPanelMostrar.setVisible(false);
         jPanelAnaidir.setVisible(false);
+        jPanelEditar.setVisible(false);
     }
 
     /*
@@ -69,6 +70,17 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPaneTelefonos1 = new javax.swing.JScrollPane();
         jTextAreaTelefonos1 = new javax.swing.JTextArea();
         jButtonAceptar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jPanelEditar = new javax.swing.JPanel();
+        jButtonHome2 = new javax.swing.JButton();
+        jLabelDatos2 = new javax.swing.JLabel();
+        jTextFieldNombre2 = new javax.swing.JTextField();
+        jLabelNombre2 = new javax.swing.JLabel();
+        jLabelTelefonos2 = new javax.swing.JLabel();
+        jScrollPaneTelefonos2 = new javax.swing.JScrollPane();
+        jTextAreaTelefonos2 = new javax.swing.JTextArea();
+        jButtonAceptar1 = new javax.swing.JButton();
+        jButtonCancelar1 = new javax.swing.JButton();
         jMenuBarAgenda = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemGuardar = new javax.swing.JMenuItem();
@@ -77,9 +89,11 @@ public class Interfaz extends javax.swing.JFrame {
         jMenuItemImportar = new javax.swing.JMenuItem();
         jMenuItemCerrar = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Agenda URJC");
+        setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         setIconImage(new ImageIcon(getClass().getResource("/agendaTelefonica/Agenda.png")).getImage());
+        setName("frame"); // NOI18N
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -151,6 +165,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jComboBoxOpciones.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         jComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Teléfono" }));
+        jComboBoxOpciones.setToolTipText("Seleccione por que va a buscar: por nombre o por teléfono");
         jComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxOpcionesActionPerformed(evt);
@@ -158,11 +173,12 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         jTextFieldVariable.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jTextFieldVariable.setToolTipText("Introduzca los datos por los que va a buscar");
         jTextFieldVariable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButtonBuscar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Buscar_Usuario.png"))); // NOI18N
-        jButtonBuscar.setToolTipText("Busca a un usuario con los datos pasados");
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Búsqueda.png"))); // NOI18N
+        jButtonBuscar.setToolTipText("Realiza una búsqueda con los datos pasados");
         jButtonBuscar.setPreferredSize(new java.awt.Dimension(57, 57));
         jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,8 +187,8 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         jButtonBorrar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButtonBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Borrar.png"))); // NOI18N
-        jButtonBorrar.setToolTipText("Borra la busqueda realizada");
+        jButtonBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Borrar_Busqueda.png"))); // NOI18N
+        jButtonBorrar.setToolTipText("Borra la búsqueda realizada");
         jButtonBorrar.setPreferredSize(new java.awt.Dimension(57, 57));
         jButtonBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +209,7 @@ public class Interfaz extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         jListContactos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListContactos.setToolTipText("Para ver un contacto, seleccionelo y pulse el botón \"Info\"");
         jScrollPaneContactos.setViewportView(jListContactos);
 
         jButtonInfo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -290,6 +307,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabelNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         jLabelNombre.setText("Nombre:");
 
+        jTextFieldNombre.setEditable(false);
+        jTextFieldNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         jTextFieldNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -299,6 +318,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jScrollPaneTelefonos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jTextAreaTelefonos.setEditable(false);
         jTextAreaTelefonos.setColumns(20);
         jTextAreaTelefonos.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         jTextAreaTelefonos.setRows(5);
@@ -306,7 +326,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jButtonEditar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Editar_Usuario.png"))); // NOI18N
-        jButtonEditar.setToolTipText("Edita el contacto");
+        jButtonEditar.setToolTipText("Modifica el contacto");
         jButtonEditar.setPreferredSize(new java.awt.Dimension(57, 57));
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -389,6 +409,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabelDatos1.setText("<HTML><U>Introduzca los datos del nuevo contacto:</U></HTML>");
 
         jTextFieldNombre1.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jTextFieldNombre1.setToolTipText("Escriba el nombre del nuevo contacto");
         jTextFieldNombre1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabelNombre1.setBackground(new java.awt.Color(255, 255, 255));
@@ -404,15 +425,26 @@ public class Interfaz extends javax.swing.JFrame {
         jTextAreaTelefonos1.setColumns(20);
         jTextAreaTelefonos1.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         jTextAreaTelefonos1.setRows(5);
+        jTextAreaTelefonos1.setToolTipText("Escriba los teléfonos del nuevo contacto");
         jScrollPaneTelefonos1.setViewportView(jTextAreaTelefonos1);
 
         jButtonAceptar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jButtonAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Aceptar_Usuario.png"))); // NOI18N
-        jButtonAceptar.setToolTipText("Guarda el nuevo contscto");
+        jButtonAceptar.setToolTipText("Guarda el nuevo contacto");
         jButtonAceptar.setPreferredSize(new java.awt.Dimension(57, 57));
         jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAceptarActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Cancelar_Usuario.png"))); // NOI18N
+        jButtonCancelar.setToolTipText("Desecha el nuevo contacto");
+        jButtonCancelar.setPreferredSize(new java.awt.Dimension(57, 57));
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
             }
         });
 
@@ -432,11 +464,13 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(jLabelDatos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAnaidirLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldNombre1)
-                                .addComponent(jScrollPaneTelefonos1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanelAnaidirLayout.createSequentialGroup()
+                                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldNombre1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPaneTelefonos1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         jPanelAnaidirLayout.setVerticalGroup(
@@ -454,10 +488,120 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTelefonos1)
                     .addComponent(jScrollPaneTelefonos1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAnaidirLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAnaidirLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        jPanelEditar.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonHome2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButtonHome2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Home.png"))); // NOI18N
+        jButtonHome2.setToolTipText("Volver a la pantalla principal");
+        jButtonHome2.setPreferredSize(new java.awt.Dimension(57, 57));
+        jButtonHome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHome2ActionPerformed(evt);
+            }
+        });
+
+        jLabelDatos2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelDatos2.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jLabelDatos2.setText("<HTML><U>Introduzca los nuevos datos del contacto:</U></HTML>");
+
+        jTextFieldNombre2.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jTextFieldNombre2.setToolTipText("Cambie el nombre del contacto si quiere");
+        jTextFieldNombre2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabelNombre2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelNombre2.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jLabelNombre2.setText("Nombre:");
+
+        jLabelTelefonos2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelTelefonos2.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jLabelTelefonos2.setText("Teléfonos:");
+
+        jScrollPaneTelefonos2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTextAreaTelefonos2.setColumns(20);
+        jTextAreaTelefonos2.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
+        jTextAreaTelefonos2.setRows(5);
+        jTextAreaTelefonos2.setToolTipText("Añada, quite o cambie los teléfonos si quiere");
+        jScrollPaneTelefonos2.setViewportView(jTextAreaTelefonos2);
+
+        jButtonAceptar1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButtonAceptar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Aceptar_Usuario.png"))); // NOI18N
+        jButtonAceptar1.setToolTipText("Guarda los cambios en el contacto");
+        jButtonAceptar1.setPreferredSize(new java.awt.Dimension(57, 57));
+        jButtonAceptar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptar1ActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelar1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButtonCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Cancelar_Usuario.png"))); // NOI18N
+        jButtonCancelar1.setToolTipText("Desecha los cambios en el contacto");
+        jButtonCancelar1.setPreferredSize(new java.awt.Dimension(57, 57));
+        jButtonCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelEditarLayout = new javax.swing.GroupLayout(jPanelEditar);
+        jPanelEditar.setLayout(jPanelEditarLayout);
+        jPanelEditarLayout.setHorizontalGroup(
+            jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditarLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelNombre2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelTelefonos2)
+                    .addComponent(jButtonHome2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelEditarLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabelDatos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelEditarLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombre2)
+                            .addComponent(jScrollPaneTelefonos2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelEditarLayout.createSequentialGroup()
+                                .addComponent(jButtonCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonAceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
+        jPanelEditarLayout.setVerticalGroup(
+            jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelDatos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonHome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNombre2))
+                .addGap(15, 15, 15)
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTelefonos2)
+                    .addComponent(jScrollPaneTelefonos2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jMenuBarAgenda.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         jMenuArchivo.setBackground(new java.awt.Color(255, 255, 255));
         jMenuArchivo.setText("Archivo");
@@ -543,6 +687,8 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelAnaidir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanelEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -553,6 +699,8 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelAnaidir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanelEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -582,7 +730,7 @@ public class Interfaz extends javax.swing.JFrame {
         chooser.setDialogTitle("Exportar");
         chooser.setFileFilter(filter);
         chooser.setSelectedFile(new File(".csv"));
-        chooser.setToolTipText("Archivo.csv");
+        chooser.setToolTipText("Guarde un " + "\"" + "Archivo.csv" + "\"");
         if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             String nombre;
             String ruta;
@@ -613,7 +761,7 @@ public class Interfaz extends javax.swing.JFrame {
         chooser.setDialogTitle("Importar");
         chooser.setFileFilter(filter);
         chooser.setSelectedFile(new File(".csv"));
-        chooser.setToolTipText("Archivo.csv");
+        chooser.setToolTipText("Abra un " + "\"" + "Archivo.csv" + "\"");
         if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             String nombre = chooser.getSelectedFile().getName();
             if(nombre.endsWith(".csv")) {
@@ -664,34 +812,40 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAgendaActionPerformed
 
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
+        jPanelMostrar.setVisible(false);
+        jPanelAgenda.setVisible(true);                                            
         jTextFieldNombre.setText("");
         jTextAreaTelefonos.setText("");
-        jPanelMostrar.setVisible(false);
-        jPanelAgenda.setVisible(true);
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        // TODO add your handling code here:
+        jPanelMostrar.setVisible(false);
+        jPanelEditar.setVisible(true);
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Eliminar_Usuario.png"));
         int result = JOptionPane.showConfirmDialog(this, "¿Está seguro de que quiere eliminar este contacto?", "Eliminar Contacto", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
-        if (JOptionPane.OK_OPTION == result)
+        if (JOptionPane.OK_OPTION == result) {
             JOptionPane.showMessageDialog(this, "¡Contacto eliminado con éxito!", "Eliminar Contacto", JOptionPane.INFORMATION_MESSAGE, icon);
+            jPanelMostrar.setVisible(false);
+            jPanelAgenda.setVisible(true);                                            
+            jTextFieldNombre.setText("");
+            jTextAreaTelefonos.setText("");
+        }
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonHome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHome1ActionPerformed
-        jTextFieldNombre1.setText("");
-        jTextAreaTelefonos1.setText("");
         jPanelAnaidir.setVisible(false);
         jPanelAgenda.setVisible(true);
+        jTextFieldNombre1.setText("");
+        jTextAreaTelefonos1.setText("");
     }//GEN-LAST:event_jButtonHome1ActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
         ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Añadir_Usuario.png"));
-        JOptionPane.showMessageDialog(this, "¡Contacto ya existente!", "Añadir Contacto", JOptionPane.WARNING_MESSAGE, icon);
-        JOptionPane.showMessageDialog(this, "¡Contacto añadido con éxito!", "Añadir Contacto", JOptionPane.INFORMATION_MESSAGE, icon);
+        JOptionPane.showMessageDialog(this, "¡Contacto ya existente!", "Nuevo Contacto", JOptionPane.WARNING_MESSAGE, icon);
+        JOptionPane.showMessageDialog(this, "¡Contacto añadido con éxito!", "Nuevo Contacto", JOptionPane.INFORMATION_MESSAGE, icon);
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     private void jButtonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoActionPerformed
@@ -712,6 +866,33 @@ public class Interfaz extends javax.swing.JFrame {
         if (JOptionPane.OK_OPTION == result)
             System.exit(0);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButtonHome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHome2ActionPerformed
+        jPanelEditar.setVisible(false);
+        jPanelAgenda.setVisible(true);
+        jTextFieldNombre2.setText("");
+        jTextAreaTelefonos2.setText("");
+    }//GEN-LAST:event_jButtonHome2ActionPerformed
+
+    private void jButtonAceptar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptar1ActionPerformed
+        ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/ModificarAñadir_Usuario.png"));
+        JOptionPane.showMessageDialog(this, "¡Nombre ya registrado!", "Modificar Contacto", JOptionPane.WARNING_MESSAGE, icon);
+        JOptionPane.showMessageDialog(this, "¡Contacto modificado con éxito!", "Modificar Contacto", JOptionPane.INFORMATION_MESSAGE, icon);
+    }//GEN-LAST:event_jButtonAceptar1ActionPerformed
+
+    private void jButtonCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelar1ActionPerformed
+        jPanelEditar.setVisible(false);
+        jPanelMostrar.setVisible(true);
+        jTextFieldNombre2.setText("");
+        jTextAreaTelefonos2.setText("");
+    }//GEN-LAST:event_jButtonCancelar1ActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        jPanelAnaidir.setVisible(false);
+        jPanelAgenda.setVisible(true);
+        jTextFieldNombre1.setText("");
+        jTextAreaTelefonos1.setText("");
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -750,26 +931,33 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
+    private javax.swing.JButton jButtonAceptar1;
     private javax.swing.JButton jButtonAgenda;
     private javax.swing.JButton jButtonAnaidir;
     private javax.swing.JButton jButtonBorrar;
     private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonCancelar1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonHome;
     private javax.swing.JButton jButtonHome1;
+    private javax.swing.JButton jButtonHome2;
     private javax.swing.JButton jButtonInfo;
     private javax.swing.JComboBox<String> jComboBoxOpciones;
     private javax.swing.JLabel jLabelBuscar;
     private javax.swing.JLabel jLabelDatos;
     private javax.swing.JLabel jLabelDatos1;
+    private javax.swing.JLabel jLabelDatos2;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelLista;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNombre1;
+    private javax.swing.JLabel jLabelNombre2;
     private javax.swing.JLabel jLabelTelefonos;
     private javax.swing.JLabel jLabelTelefonos1;
+    private javax.swing.JLabel jLabelTelefonos2;
     private javax.swing.JList<String> jListContactos;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBarAgenda;
@@ -780,15 +968,19 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemVaciar;
     private javax.swing.JPanel jPanelAgenda;
     private javax.swing.JPanel jPanelAnaidir;
+    private javax.swing.JPanel jPanelEditar;
     private javax.swing.JPanel jPanelInicio;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JScrollPane jScrollPaneContactos;
     private javax.swing.JScrollPane jScrollPaneTelefonos;
     private javax.swing.JScrollPane jScrollPaneTelefonos1;
+    private javax.swing.JScrollPane jScrollPaneTelefonos2;
     private javax.swing.JTextArea jTextAreaTelefonos;
     private javax.swing.JTextArea jTextAreaTelefonos1;
+    private javax.swing.JTextArea jTextAreaTelefonos2;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNombre1;
+    private javax.swing.JTextField jTextFieldNombre2;
     private javax.swing.JTextField jTextFieldVariable;
     // End of variables declaration//GEN-END:variables
 }
