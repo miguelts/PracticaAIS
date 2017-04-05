@@ -42,7 +42,6 @@ public class Interfaz extends javax.swing.JFrame {
         jLabelFondo = new javax.swing.JLabel();
         jPanelAgenda = new javax.swing.JPanel();
         jLabelBuscar = new javax.swing.JLabel();
-        jComboBoxOpciones = new javax.swing.JComboBox<>();
         jTextFieldVariable = new javax.swing.JTextField();
         jButtonBuscar = new javax.swing.JButton();
         jButtonBorrar = new javax.swing.JButton();
@@ -91,6 +90,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Agenda URJC");
+        setBackground(new java.awt.Color(255, 255, 255));
         setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         setIconImage(new ImageIcon(getClass().getResource("/agendaTelefonica/Agenda.png")).getImage());
         setName("frame"); // NOI18N
@@ -101,7 +101,8 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jPanelInicio.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelInicio.setBackground(new java.awt.Color(255, 102, 102));
+        jPanelInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanelInicio.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         jButtonAgenda.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -116,24 +117,25 @@ public class Interfaz extends javax.swing.JFrame {
         jLabelLogo.setBackground(new java.awt.Color(255, 255, 255));
         jLabelLogo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Logo_URJC.png"))); // NOI18N
+        jLabelLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelFondo.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFondo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Fondo_Agenda.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Fondo_Agenda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelInicioLayout = new javax.swing.GroupLayout(jPanelInicio);
         jPanelInicio.setLayout(jPanelInicioLayout);
         jPanelInicioLayout.setHorizontalGroup(
             jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                .addGap(271, 271, 271)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
+                .addContainerGap(252, Short.MAX_VALUE)
                 .addComponent(jButtonAgenda)
-                .addGap(234, 234, 234))
+                .addGap(253, 253, 253))
             .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
-                    .addGap(200, 200, 200)
+                    .addContainerGap(180, Short.MAX_VALUE)
                     .addComponent(jLabelLogo)
-                    .addGap(160, 160, 160)))
+                    .addGap(180, 180, 180)))
             .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelInicioLayout.createSequentialGroup()
                     .addComponent(jLabelFondo)
@@ -146,7 +148,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jButtonAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
+                .addGroup(jPanelInicioLayout.createSequentialGroup()
                     .addGap(58, 58, 58)
                     .addComponent(jLabelLogo)
                     .addGap(79, 79, 79)))
@@ -156,29 +158,20 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jPanelAgenda.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelAgenda.setBackground(new java.awt.Color(255, 102, 102));
         jPanelAgenda.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         jLabelBuscar.setBackground(new java.awt.Color(255, 255, 255));
         jLabelBuscar.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
-        jLabelBuscar.setText("Buscar por:");
-
-        jComboBoxOpciones.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
-        jComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Teléfono" }));
-        jComboBoxOpciones.setToolTipText("Seleccione por que va a buscar: por nombre o por teléfono");
-        jComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxOpcionesActionPerformed(evt);
-            }
-        });
+        jLabelBuscar.setText("Buscar contacto por:");
 
         jTextFieldVariable.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
-        jTextFieldVariable.setToolTipText("Introduzca los datos por los que va a buscar");
+        jTextFieldVariable.setToolTipText("Introduce el nombre por el que vas a buscar");
         jTextFieldVariable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButtonBuscar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Búsqueda.png"))); // NOI18N
-        jButtonBuscar.setToolTipText("Realiza una búsqueda con los datos pasados");
+        jButtonBuscar.setToolTipText("Realiza una búsqueda con el nombre pasado");
         jButtonBuscar.setPreferredSize(new java.awt.Dimension(57, 57));
         jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +202,20 @@ public class Interfaz extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         jListContactos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListContactos.setToolTipText("Para ver un contacto, seleccionelo y pulse el botón \"Info\"");
+        jListContactos.setToolTipText("Para ver un contacto, selecciónelo y pulse el botón \"Info\"");
+        jListContactos.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jListContactosFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jListContactosFocusLost(evt);
+            }
+        });
+        jListContactos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListContactosValueChanged(evt);
+            }
+        });
         jScrollPaneContactos.setViewportView(jListContactos);
 
         jButtonInfo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -237,56 +243,47 @@ public class Interfaz extends javax.swing.JFrame {
         jPanelAgendaLayout.setHorizontalGroup(
             jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(30, 30, 30)
                 .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                        .addComponent(jScrollPaneContactos, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                        .addComponent(jLabelLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAgendaLayout.createSequentialGroup()
-                        .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)
-                                .addComponent(jButtonAnaidir, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                                .addComponent(jLabelBuscar)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)
-                                .addComponent(jTextFieldVariable, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                                .addComponent(jButtonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(20, 20, 20))))
+                        .addComponent(jLabelBuscar)
+                        .addGap(35, 35, 35)
+                        .addComponent(jTextFieldVariable, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanelAgendaLayout.createSequentialGroup()
+                            .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(35, 35, 35)
+                            .addComponent(jButtonAnaidir, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPaneContactos, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanelAgendaLayout.setVerticalGroup(
             jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgendaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(25, 25, 25)
                 .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextFieldVariable, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15)
+                .addGap(17, 17, 17)
                 .addComponent(jLabelLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(jScrollPaneContactos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addComponent(jScrollPaneContactos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
                 .addGroup(jPanelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonAnaidir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jPanelMostrar.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMostrar.setBackground(new java.awt.Color(255, 102, 102));
         jPanelMostrar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         jButtonHome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -391,7 +388,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jPanelAnaidir.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelAnaidir.setBackground(new java.awt.Color(255, 102, 102));
         jPanelAnaidir.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         jButtonHome1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -488,17 +485,14 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTelefonos1)
                     .addComponent(jScrollPaneTelefonos1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addGroup(jPanelAnaidirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelAnaidirLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelAnaidirLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanelEditar.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelEditar.setBackground(new java.awt.Color(255, 102, 102));
 
         jButtonHome2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jButtonHome2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agendaTelefonica/Home.png"))); // NOI18N
@@ -788,10 +782,6 @@ public class Interfaz extends javax.swing.JFrame {
             System.exit(0);
     }//GEN-LAST:event_jMenuItemCerrarActionPerformed
 
-    private void jComboBoxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxOpcionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxOpcionesActionPerformed
-
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         ImageIcon icon = new ImageIcon(getClass().getResource("/agendaTelefonica/Encontrar_Usuario.png"));
         JOptionPane.showMessageDialog(this, "¡Contacto no encontrado!", "Buscar Contacto", JOptionPane.WARNING_MESSAGE, icon);
@@ -902,6 +892,18 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
+    private void jListContactosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListContactosValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListContactosValueChanged
+
+    private void jListContactosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jListContactosFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListContactosFocusGained
+
+    private void jListContactosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jListContactosFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListContactosFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -952,7 +954,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButtonHome1;
     private javax.swing.JButton jButtonHome2;
     private javax.swing.JButton jButtonInfo;
-    private javax.swing.JComboBox<String> jComboBoxOpciones;
     private javax.swing.JLabel jLabelBuscar;
     private javax.swing.JLabel jLabelDatos;
     private javax.swing.JLabel jLabelDatos1;
